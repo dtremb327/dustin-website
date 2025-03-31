@@ -28,7 +28,7 @@
       margin-top: 0.5rem;
     }
     main {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1rem;
     }
@@ -45,6 +45,65 @@
     }
     a:hover {
       text-decoration: underline;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .grid section {
+      flex: 1 1 calc(33% - 2rem);
+      min-width: 250px;
+      box-sizing: border-box;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .grid section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+    .embed-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin-bottom: 3rem;
+    }
+    .embed-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .dear-dustin {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f4f7ff;
+      border-left: 4px solid #0b3d91;
+    }
+    .dear-dustin textarea {
+      width: 100%;
+      height: 100px;
+      margin-top: 0.5rem;
+    }
+    .dear-dustin button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #0b3d91;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .dear-dustin button:hover {
+      background-color: #094080;
     }
     footer {
       background: #0b3d91;
@@ -65,44 +124,58 @@
       <p>I’m seeking a role in IT support, technical troubleshooting, or customer success where I can blend communication skills with growing technical expertise. My background in high-pressure support environments has sharpened my ability to stay cool, coach others, and build solutions that stick.</p>
     </section>
 
-    <section>
-      <h2>What I Do Well</h2>
-      <ul>
-        <li>Turn chaos into calm during tough customer calls.</li>
-        <li>Design and deliver training that people actually enjoy.</li>
-        <li>Spot coaching gaps that improve team performance and reduce shrinkage.</li>
-      </ul>
-    </section>
+    <div class="embed-container">
+      <iframe src="https://drive.google.com/file/d/1xYP2CvjDYZPbP7VGMoEMIjGmpIF6FhH1/preview" allow="autoplay"></iframe>
+    </div>
 
-    <section>
-      <h2>Proof of Growth</h2>
-      <p>My career journey includes:</p>
-      <ul>
-        <li>Creating documentation to help teams troubleshoot faster.</li>
-        <li>Building a personal website from scratch using Linux, Git, and HTML.</li>
-        <li>Completing the Google IT Support Certificate (2025).</li>
-      </ul>
-    </section>
+    <div class="grid">
+      <section>
+        <h2>What I Do Well</h2>
+        <ul>
+          <li>Turn chaos into calm during tough customer calls.</li>
+          <li>Design and deliver training that people actually enjoy.</li>
+          <li>Spot coaching gaps that improve team performance and reduce shrinkage.</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>What I'm Learning Right Now</h2>
-      <ul>
-        <li>Neovim (and navigating it like a wizard)</li>
-        <li>Git & GitHub workflows</li>
-        <li>How to make a personal site actually work for career growth</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Proof of Growth</h2>
+        <ul>
+          <li>Creating documentation to help teams troubleshoot faster.</li>
+          <li>Building a personal website from scratch using Linux, Git, and HTML.</li>
+          <li>Completing the Google IT Support Certificate (2025).</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Resume</h2>
-      <p><a href="Trembath, Dustin Resume.pdf" download>Download my resume here</a>.</p>
-    </section>
+      <section>
+        <h2>What I'm Learning Right Now</h2>
+        <ul>
+          <li>Neovim (and navigating it like a wizard)</li>
+          <li>Git & GitHub workflows</li>
+          <li>How to make a personal site actually work for career growth</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:dustin80501@gmail.com">dustin80501@gmail.com</a><br />
-      LinkedIn: <a href="https://linkedin.com/in/dustin-trembath" target="_blank">linkedin.com/in/dustin-trembath</a></p>
-    </section>
+      <section>
+        <h2>Resume</h2>
+        <p><a href="Trembath, Dustin Resume.pdf" download>Download my resume here</a>.</p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:dustin80501@gmail.com">dustin80501@gmail.com</a><br />
+        LinkedIn: <a href="https://linkedin.com/in/dustin-trembath" target="_blank">linkedin.com/in/dustin-trembath</a></p>
+      </section>
+
+      <section class="dear-dustin">
+        <h2>Dear Dustin</h2>
+        <p>🤔 Got a weird problem? Send it to Dear Dustin – I’d love to help. Drop a message here. Tell me who you are and how to contact you—we’ll work together.</p>
+        <form action="https://formspree.io/f/xeoalwvv" method="POST">
+          <textarea name="message" placeholder="Write your message here..."></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </div>
   </main>
   <footer>
     <p>&copy; 2025 Dustin Trembath | Built with curiosity and a terminal</p>
