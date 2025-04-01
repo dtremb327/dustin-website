@@ -124,6 +124,37 @@
       font-size: 1.1rem;
     }
 
+
+    .resume-icon {
+      font-size: 2rem;
+      display: inline-block;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .resume-icon:hover {
+      animation: wiggle 0.3s ease-in-out infinite alternate;
+    }
+
+    @keyframes wiggle {
+      0% { transform: rotate(-5deg); }
+      100% { transform: rotate(5deg); }
+    }
+
+    .sliding {
+      animation: slide-away 0.4s ease-in-out forwards;
+    }
+
+    @keyframes slide-away {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(60px); opacity: 0.5; }
+    }
+
+    #resume-download {
+      font-style: italic;
+      color: #0b3d91;
+    }
+
 </style>
 </head>
 <body>
@@ -143,8 +174,15 @@
     </section>
 
     
+
 <section>
-  <h2>📄 Visual Resume</h2>
+  <h2><span class="resume-icon" id="easter-egg" title="Click me!">📄</span> Visual Resume</h2>
+  <p>Click the icon above for a little fun, then grab the downloadable version if you catch it!</p>
+  <div id="resume-download" style="display:none; margin-top: 0.5rem;">
+    <a href="Trembath, Dustin Resume.pdf" download>🎯 Download My Resume</a>
+  </div>
+</section>
+
   <p>Click below to explore a short, scrollable presentation about my experience and what drives me. It only takes a minute!</p>
 </section>
 
@@ -205,6 +243,27 @@
   <footer>
     <p>&copy; 2025 Dustin Trembath | Built with curiosity and a terminal</p>
   </footer>
+
+  <script>
+    let stage = 0;
+    const egg = document.getElementById('easter-egg');
+    const downloadBox = document.getElementById('resume-download');
+
+    egg.onclick = function() {
+      if (stage === 0) {
+        egg.innerText = '🎩📄';
+        stage++;
+      } else if (stage === 1) {
+        egg.classList.add('sliding');
+        stage++;
+      } else if (stage === 2) {
+        egg.classList.remove('sliding');
+        downloadBox.style.display = 'block';
+        stage++;
+      }
+    };
+  </script>
+
 </body>
 </html>
 
